@@ -16,7 +16,7 @@ export default class CommentsList extends React.Component{
                 <ul className="list-group">
                     {
                         commentsArr.map((item, index) => {
-                            return <CommentItem key={index} commentItem={item}/>
+                            return <CommentItem key={index} commentItem={item} index={index} del={this.props.del}/>
                         })
                     }
                 </ul>

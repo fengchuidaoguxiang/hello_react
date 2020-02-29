@@ -5,6 +5,9 @@ import CommentsList from './components/CommentsList';
 
 import './app.css';
 
+/**
+ * App.js：代表整个应用，本质就是一个组件
+ */
 
 // // 定义组件
 // class App extends React.Component{
@@ -37,6 +40,23 @@ export default class App extends Component{
         super(props);
     }
 
+    add = (commentObj) => {
+        let commentsArr = [commentObj, ...this.state.commentsArr];
+        // 更新commentsArr的状态值
+        this.setState({
+            commentsArr
+        });
+    }
+
+    del = (index) => {
+        console.log('index: ', index);
+        let { commentsArr } = this.state;
+        commentsArr.splice(index, 1);
+        this.setState({
+            commentsArr
+        });
+    }
+
     render(){
         return(
             <div>
@@ -51,8 +71,8 @@ export default class App extends Component{
                         </div>
                     </header>
                     <div className="container">
-                        <AddComment />
-                        <CommentsList commentsArr={this.state.commentsArr}/>
+                        <AddComment add={this.add}/>
+                        <CommentsList del={this.del} commentsArr={this.state.commentsArr}/>
                     </div>
                 </div>
             </div>
