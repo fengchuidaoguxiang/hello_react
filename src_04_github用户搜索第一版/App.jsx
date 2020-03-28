@@ -1,8 +1,9 @@
 import React from 'react';
-import Search from './containers/Search';
-import List from './containers/List';
+import Search from './components/Search';
+import List from './components/List';
 
 import './app.css';
+
 
 export default class App extends React.Component{
     state = {

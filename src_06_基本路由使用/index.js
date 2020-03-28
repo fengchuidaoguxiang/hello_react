@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import store from './store';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 
 import App from './App';
 
 // 渲染整个应用
-ReactDOM.render(
-    (<Provider store={store}>
+ReactDOM.render((
+    <HashRouter>
         <App />
-    </Provider>
+    </HashRouter>
 ), document.getElementById("root"));
